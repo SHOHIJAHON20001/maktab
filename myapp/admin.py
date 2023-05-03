@@ -4,4 +4,8 @@ from myapp.models import School
 
 
 admin.site.unregister([Group])
-admin.site.register([School])
+
+class schoolAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'last_name', 'age', 'student_class', 'created_at']
+
+admin.site.register(School, schoolAdmin)

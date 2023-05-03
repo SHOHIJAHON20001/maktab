@@ -36,8 +36,8 @@ class School(models.Model):
         verbose_name_plural = "School"
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
-
+        for_admin =  f"{self.first_name} {self.last_name}"
+        return for_admin
     def week_payment(self):
         week = self.monday_pay+self.tuesday_pay+self.wednesday_pay+self.thursday_pay+self.friday_pay+self.saturday_pay
         return week
